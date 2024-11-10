@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Portföy Web Sitesi</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+            <ul>
+                <li><a href="#" class="active">Ana Sayfa</a></li>
+                <li><a href="#aboutpage">Hakkımda</a></li>
+                <li><a href="#projects">Projelerim</a></li>
+                <li><a href="#contacts">İletişim</a></li>
+            </ul>
+        </div>
+
+        <section id="homepage">
+            <div class="homepage-container">
+                <div class="homepage-texts-container">
+                    <div class="profile-picture"></div>
+                    <h1>Hoşgeldiniz, Ben Emirhan!<br></h1>
+                    <h2><br>Teknolojiye tutkuyla bağlı bir biligsyar mühendisi adayıyım. <br>Sürekli öğreniyor, kullanıcı dostu ve işlevsel projeler geliştiriyorum.<br><br>
+                    <h2><br>Hakkımda daha fazla bilgi almak için yukarıda yer alan "Hakkımda" sayfasını ziyaret edebilirsiniz.<br><br></h2>
+                    <button id="dateButton">Tarih</button>
+                  </div>
+            </div>
+        </section>
+
+        <section id="aboutpage">
+            <div class="aboutpage-container">
+                <div class="aboutpage-texts-container">
+                    <h1>Emirhan AŞIK Kimdir?</h1>
+                    <p id="text">
+                        Teknolojiye ve inovasyona olan tutkum beni yazılım geliştirme dünyasına adım atmaya yönlendirdi. 
+                        Bilgisayar mühendisliği eğitimim boyunca edindiğim teorik bilgileri pratiğe dökerek, işlevsel ve kullanıcı 
+                        dostu projeler geliştirmeyi hedefliyorum. Sürekli öğrenmeye açık bir yapıya sahibim ve her yeni proje 
+                        benim için bir gelişim fırsatı.
+                    </p>
+                    <button id="toggleButton">Daha fazla gör...</button> <br><br><br>
+                    <a href="about-page.html" target="_self">Daha Fazla Bilgi İçin</a>
+                </div>
+            </div>
+        </section> 
+
+        <section id="projects">
+            <div class="hp-projects-containers">
+                <div class="projects-title-container">
+                    <h1>Projelerim</h1><br>
+                </div>
+                <div class="projects-texts-container">
+                    <img src="assets/img/avus.png" alt="AVUS"> 
+                    <img src="assets/img/bilgisayar.png" alt="bilgisayar"><br><br><br>
+                    <p>
+                        Geliştirdiğim projeler, kullanıcı deneyimini ön planda tutarak farklı sektörlerde dijital çözümler sunmayı amaçlamaktadır. Bilgisayar seçimini kolaylaştırmak için geliştirdiğimiz sistem, kullanıcıların ihtiyaçlarına göre en uygun bilgisayarı bulmalarına yardımcı olurken, oyun konsolları için teknik destek sağlayan web sitesi, kullanıcıların PlayStation cihazlarındaki sorunlara hızlıca çözüm bulmalarını sağlar. Ayrıca, turizm bölgesinde yer alan bir restoran için hazırladığım web sitesi, kullanıcıların menüyü dil seçenekleriyle incelemelerini kolaylaştırarak yerli ve yabancı ziyaretçilere hitap etmektedir. Bu projeler, kullanıcı dostu arayüzleri ve sektörel ihtiyaçlara uygun çözümleriyle, teknolojiyi her alanda erişilebilir ve verimli hale getirmeyi hedeflemektedir.
+                    </p> <br><br><br>
+                    <a href="projects-page.html" target="_self">Projelerimi Detaylı İncelemek İçin Lütfen Tıklayınız</a> <br><br><br><br><br><br>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacts">
+            <div class="contacts-container">
+                <div class="contacts-title-container">
+                    <br><br><br><h1>İletişim</h1> <br><br>
+                    <h2>Aşağıdaki bölümden mesaj gönderebilirsiniz</h2><br><br>
+                </div>
+                <div class="message-form">
+                    <form action="#" class="form">
+                        <div class="column">
+                            <div class="input-box">
+                                <label>Adınız</label><br>
+                                <input type="text" placeholder="Lütfen adınızı giriniz."/>
+                            </div>
+                            <div class="input-box">
+                                <label>Soyadınız</label><br>
+                                <input type="text" placeholder="Lütfen soyadınızı giriniz."/>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label>Mail Adresiniz</label><br>
+                            <input type="text" placeholder="Lütfen mail adresinizi giriniz."/>
+                        </div>
+                        <div class="input-box">
+                            <label>Mesleğiniz</label><br>
+                            <div class="select-box">
+                                <select>
+                                    <option selected>Çalışan
+                                        <option>Mezun
+                                        <option>Öğrenci
+                                        <option>Diğer
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label>Mesajınız</label><br>
+                            <textarea placeholder="Lütfen mesajınızı yazınız."></textarea>
+                        </div>
+                        <button id="submit">Gönder</button><button type="reset">Temizle</button>
+                    </form>
+                </div><br><br><br><br><br><br><br><br>
+            </div>
+        </section>
+
+        <div class="footer">
+            <div class="footer-container">
+                <h2>Emirhan AŞIK Kişisel Pörtfoy Web Sitesi</h2>
+                <p>Designed by <b>ASTEK</b></p>
+                <div class="social-media">
+                    <a href="https://github.com/emiras61" target="_blank">
+                        <img src="assets/img/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/emiras61/" target="_blank">
+                        <img src="assets/img/linkedin.png" alt="Linkedin">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
