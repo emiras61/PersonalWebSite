@@ -9,12 +9,19 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <div class="logo">
-                <a href="#"></a>
-            </div>
+            <div class="logo"></div>
             <ul>
-                <li><a href="index.html" class="active">Ana Sayfaya Dön</a></li>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about-page.html">Hakkımda</a></li>
+                <li><a href="projects-page.html" class="active">Projelerim</a></li>
             </ul>
+            <div class="toggle_btn"></div>
+        </div>
+
+        <div class="drw_menu">
+            <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about-page.html">Hakkımda</a></li>
+                <li><a href="projects-page.html" class="active">Projelerim</a></li>
         </div>
 
         <section id="projects">
@@ -22,38 +29,38 @@
                 <div class="projects-title-container">
                     <h1>Projelerim</h1>
                 </div>
-                <div class="projects-bar-container">
-                    <button id="all" class="active" onclick="setActive(this)">Hepsi</button>
-                    <button id="web" onclick="setActive(this)">Web Projeleri</button>
-                    <button id="ai" onclick="setActive(this)">Yapay Zeka Projeleri</button>
-                    <button id="iot" onclick="setActive(this)">IoT Projeleri</button>
+                <div class="projects-bar-container" id="filter-buttons">
+                    <button class="active" data-filter="all">Hepsi</button>
+                    <button data-filter="web">Web Projeleri</button>
+                    <button data-filter="ai">Yapay Zeka Projeleri</button>
+                    <button data-filter="iot">IoT Projeleri</button>
                     <br><br>
                 </div>
-                <div class="projects-container">
-                    <div class="project-container" category="web">
+                <div class="projects-container" id="filterable-projects">
+                    <div class="project-container" data-name="web">
                         <h3>Aklımdaki Bilgisyar Web Sitesi</h3><br><br>
                         <img src="assets/img/bilgisayar.png" alt="AVUS"> <br><br>
-                        <p>Takım arkadaşlarımla birlikte grup ödevi kapsamında geliştirdiğimiz bu proje, kullanıcıların ihtiyaçlarına göre en uygun bilgisayarı seçmelerine yardımcı olmayı amaçlıyor. Siteye giren kullanıcılar, birkaç basit soruya cevap vererek kullanım amaçlarını, bütçelerini ve teknik tercihlerini belirtirler. Bu bilgilere dayanarak, sistem onlara en iyi bilgisayar seçeneklerini önerir. Bu projeyle, karmaşık bilgisayar seçimi sürecini basitleştiriyor ve doğru kararı hızla vermelerine destek oluyoruz.</p><br><br><br>
+                        <p>Takım arkadaşlarımla birlikte grup ödevi kapsamında geliştirdiğimiz bu proje, kullanıcıların ihtiyaçlarına göre en uygun bilgisayarı seçmelerine yardımcı olmayı amaçlıyor. Siteye giren kullanıcılar, birkaç basit soruya cevap vererek kullanım amaçlarını, bütçelerini ve teknik tercihlerini belirtirler. Bu bilgilere dayanarak, sistem onlara en iyi bilgisayar seçeneklerini önerir. Bu projeyle, karmaşık bilgisayar seçimi sürecinde destek oluyoruz.</p><br><br><br>
                         <a href="https://emiras61.github.io/aklimdakibilgisyar/" target="_blank">Web Sitesini Ziyaret Et</a>
                     </div>
-                    <div class="project-container" category="web">
+                    <div class="project-container" data-name="web">
                         <h3>Teknik Servis Web Sitesi</h3><br><br>
                         <img src="assets/img/teknik.png" alt="AVUS"> <br><br>
                         <p>Oyun konsolları için teknik destek sunan bir firma için hazırladığım bu web sitesi, kullanıcıların PlayStation tamiri ve bakımı konularında hızlı ve güvenilir çözümlere ulaşmalarını sağlıyor. Sitede sorun tespiti, detaylı temizlik, kontrolcü ve konsol tamiri gibi hizmet seçenekleri yer almakta, müşteriler taleplerini kolayca oluşturabilmektedir. Ayrıca, sıkça sorulan sorular bölümüyle kullanıcıların en çok merak ettiği konulara yanıt sunulmaktadır.</p><br><br><br>
                         <a href="https://emiras61.github.io/batuteknik/" target="_blank">Web Sitesini Ziyaret Et</a>
                     </div>
-                    <div class="project-container" category="web">
+                    <div class="project-container" data-name="web">
                         <h3>Restoran Web Sitesi</h3><br><br>
                         <img src="assets/img/restoran.png" alt="AVUS"> <br><br>
                         <p>Turizm bölgesinde bulunan bir restoran için hazırladığım bu web sitesi, kullanıcıların menüyü kolayca inceleyebilmelerini sağlamak için tasarlandı. Ana sayfada dil seçimi sunulmakta, böylece Türkçe ve İngilizce seçenekleri ile yerli ve yabancı müşterilere hitap edilebilmektedir. Menünün kategorilere ayrılması ve görsellerle desteklenmesi sayesinde kullanıcılar, restoranın sunduğu lezzetleri rahatlıkla keşfedebilir.</p><br><br><br>
                         <a href="https://emiras61.github.io/abrestoran/" target="_blank">Web Sitesini Ziyaret Et</a>
                     </div>
-                    <div class="project-container" category="iot"> 
+                    <div class="project-container" data-name="iot"> 
                         <h3>Akıllı Viraj ve Uyarı Sistemi</h3> <br><br>
                         <img src="assets/img/avus.png" alt="AVUS"> <br><br>
                         <p>Geliştirdiğim Akıllı Viraj ve Uyarı Sistemi projesi, görüşün düşük olduğu keskin virajlar, rampalar ve sisli yol bölümlerinde sürücü güvenliğini artırmak amacıyla geliştirilmiştir. Proje, ESP32 tabanlı radar ve ışıklı uyarı direkleriyle araçları tespit ederek sürücüleri uyarır ve güvenli sürüş koşulları sağlar. Modüler yapıya sahip direkler, kablosuz haberleşme sayesinde birbirleriyle organize çalışır ve kaza durumunda farklı ışıklarla uyarılar sağlar.<br><br><br></p>
                     </div>
-                    <div class="project-container" category="ai">
+                    <div class="project-container" data-name="ai">
                         <h3>Görüntü İşleme Destekli Ağır Vasıta Araç Güvenlik Sistemi</h3><br><br>
                         <img src="assets/img/visiguard.png" alt="AVUS"> <br><br>
                         <p>Geliştirdiğim bu proje, görüntü işleme ve yapay zeka teknolojilerini kullanarak ağır vasıta araçlarının güvenliğini artırmayı amaçlıyor. Sollama, kör nokta tespiti ve arkadan çarpma gibi durumlarda sürücülere görsel ve işitsel uyarılar sağlayarak kaza riskini azaltmayı hedefliyor. Ayrıca, mobil uygulama desteğiyle park halindeyken araç çevresindeki güvenliği anlık olarak izleme imkânı sunuyor. Bu sistem, ağır vasıta araç güvenliğine yenilikçi bir çözüm getirmeyi amaçlayarak trafik kazalarının önlenmesine katkı sağlamayı hedefliyor.</p><br><br><br>
@@ -77,6 +84,6 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/projects.js"></script>
 </body>
 </html>

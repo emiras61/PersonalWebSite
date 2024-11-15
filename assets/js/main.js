@@ -1,107 +1,70 @@
-/*
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.navbar ul li a');
-    const navLinksHover = document.querySelectorAll('.navbar ul li a:hover');
-    
-    if (window.scrollY > 100) {
-        // Sayfa 50 piksel aşağı kaydırıldığında arka plan rengini değiştir
-        navbar.style.backgroundColor = 'rgba(255, 255, 255)';
-        navLinks.forEach(link => { link.style.color = 'rgb(0, 0, 0)';});
-    } else {
-        // Sayfa en üstte iken orijinal renge dön
-        navbar.style.backgroundColor = 'rgba(255, 255, 255';
-    }
-}); */
+// Kaynak: https://www.youtube.com/watch?v=keglFOZ7iTY&t=1076s
 
-document.addEventListener("DOMContentLoaded", function() {
-    const text = document.getElementById("text");
-    const button = document.getElementById("toggleButton");
+var Hour = document.getElementById('hour');
+var Dots = document.getElementById('dots');
+var Minutes = document.getElementById('minute');
 
-    // Kısa ve uzun içerik
-    const shortText = "Teknolojiye ve inovasyona olan tutkum beni yazılım geliştirme dünyasına adım atmaya yönlendirdi.";
-    const fullText = "Teknolojiye ve inovasyona olan tutkum beni yazılım geliştirme dünyasına adım atmaya yönlendirdi. Bilgisayar mühendisliği eğitimim boyunca edindiğim teorik bilgileri pratiğe dökerek, işlevsel ve kullanıcı dostu projeler geliştirmeyi hedefliyorum. Sürekli öğrenmeye açık bir yapıya sahibim ve her yeni proje benim için bir gelişim fırsatı.";
+var Day = document.getElementById('day');
+var Month = document.getElementById('month');
+var Year = document.getElementById('year');
 
-    // Başlangıçta kısa metni ayarla
-    text.innerText = shortText;
+setInterval(function() {
 
-    // Butona tıklama olayı ekle
-    button.addEventListener("click", function() {
-        if (text.innerText === shortText) {
-            text.innerText = fullText;
-            button.innerText = "Daha az gör...";
-        } else {
-            text.innerText = shortText;
-            button.innerText = "Daha fazla gör...";
-        }
-    });
-});
+    var D = new Date();
+    var Saat = D.getHours();
+    var Dakika = D.getMinutes();
+    console.log(Hour, Minutes)
 
-function setActive(button) {
-    // Tüm butonların active sınıfını kaldır
-    const buttons = document.querySelectorAll('.projects-bar-container button');
-    buttons.forEach(btn => btn.classList.remove('active'));
+    var Gun = D.getDate();
+    var Ay = D.getMonth();
+    var Yil = D.getFullYear();
 
-    // Tıklanan butona active sınıfını ekle
-    button.classList.add('active');
+    Hour.innerHTML = Saat < 10 ? '0' + Saat : Saat;
+    Minutes.innerHTML = (Dakika < 10) ? '0' + Dakika : Dakika;
+    var Months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    Day.innerHTML = Gun;
+    Month.innerHTML = Months[Ay];
+    Year.innerHTML = Yil;
+    Dots.classList.toggle('color');
+}, 50);
 
-    // Kategoriye göre projeleri filtrele
-    const category = button.id;
-    const projects = document.querySelectorAll('.project-container');
 
-    projects.forEach(project => {
-        if (category === 'all' || project.getAttribute('category') === category) {
-            project.style.opacity = '1'; // Görünür yap
-            project.style.visibility = 'visible';
-            project.style.position = 'relative';
-        } else {
-            project.style.opacity = '0'; // Gizle
-            project.style.visibility = 'hidden';
-            project.style.position = 'absolute';
-        }
-    });
+// Kaynak: https://www.youtube.com/watch?v=GdrbE-s5DgQ&t=780s
+const toggleBtn = document.querySelector('.toggle_btn')
+const drwMenu = document.querySelector('.drw_menu')
+
+toggleBtn.onclick = function () {
+    drwMenu.classList.toggle('open')
 }
 
+// Kaynak: https://www.youtube.com/watch?v=In0nB0ABaUk
+const name = document.getElementById('name')
+const surname = document.getElementById('surname')
+const email = document.getElementById('email')
+const textArea = document.getElementById('textArea')
+const form = document.getElementById('form')
+const errorElement = document.getElementById('error')
 
-function updateDateTime() {
-    const dateButton = document.getElementById('dateButton');
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString(); // Tarihi (gün/ay/yıl) formatında gösterir
-    const formattedTime = now.toLocaleTimeString(); // Saati (saat:dakika:saniye) formatında gösterir
-    dateButton.textContent = `${formattedDate} - ${formattedTime}`; // Butonun içine tarih ve saati yazar
-}
+form.addEventListener('submit', (e) => {
+  let messages = []
+  if (name.value === '' || name.value == null) {
+    messages.push('Lütfen bir ad giriniz!')
+  }
 
-// Sayfa yüklendiğinde hemen zamanı günceller
-updateDateTime();
-// Her saniye zamanı günceller
-setInterval(updateDateTime, 1000);
+  if (surname.value === '' || surname.value == null) {
+    messages.push('Lütfen bir soyad giriniz!')
+  }
 
+  if (email.value === '' || email.value == null) {
+    messages.push('Lütfen bir email giriniz!')
+  }
 
+  if (textArea.value === '' || textArea.value == null) {
+    messages.push('Lütfen mesajınızı yazınız!')
+  }
 
-// Menü öğelerini seçin
-const menuItems = document.querySelectorAll('.navbar ul li a');
-
-// Her bir bölümün başlangıcını bulmak için bölümleri seçin
-const sections = document.querySelectorAll('section');
-
-// Bölüme göre active sınıfını ayarlayan işlev
-function setActiveMenuItem() {
-    let index = sections.length;
-
-    // Sayfa kaydırma pozisyonuna göre aktif bölümü bul
-    while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
-
-    // Tüm menü öğelerinden active sınıfını kaldır
-    menuItems.forEach((link) => link.classList.remove('active'));
-
-    // Şu anki görünür bölüme ait menü öğesine active sınıfını ekle
-    if (menuItems[index]) {
-        menuItems[index].classList.add('active');
-    }
-}
-
-// Sayfa kaydırıldığında setActiveMenuItem işlevini çağır
-window.addEventListener('scroll', setActiveMenuItem);
-
-// İlk başta doğru bölümün vurgulanması için çağır
-setActiveMenuItem();
+  if (messages.length > 0) {
+    e.preventDefault()
+    errorElement.innerText = messages.join('\n ')
+  }
+})

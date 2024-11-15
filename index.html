@@ -9,15 +9,19 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <div class="logo">
-                <a href="#"></a>
-            </div>
+            <div class="logo"></div>
             <ul>
-                <li><a href="#" class="active">Ana Sayfa</a></li>
-                <li><a href="#aboutpage">Hakkımda</a></li>
-                <li><a href="#projects">Projelerim</a></li>
-                <li><a href="#contacts">İletişim</a></li>
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="about-page.html">Hakkımda</a></li>
+                <li><a href="projects-page.html">Projelerim</a></li>
             </ul>
+            <div class="toggle_btn"></div>
+        </div>
+
+        <div class="drw_menu">
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="about-page.html">Hakkımda</a></li>
+                <li><a href="projects-page.html">Projelerim</a></li>
         </div>
 
         <section id="homepage">
@@ -26,65 +30,48 @@
                     <div class="profile-picture"></div>
                     <h1>Hoşgeldiniz, Ben Emirhan!<br></h1>
                     <h2><br>Teknolojiye tutkuyla bağlı bir biligsyar mühendisi adayıyım. <br>Sürekli öğreniyor, kullanıcı dostu ve işlevsel projeler geliştiriyorum.<br><br>
-                    <h2><br>Hakkımda daha fazla bilgi almak için yukarıda yer alan "Hakkımda" sayfasını ziyaret edebilirsiniz.<br><br></h2>
-                    <button id="dateButton">Tarih</button>
+                    <h2><br>Hakkımda daha fazla bilgi almak için "Hakkımda" sayfasını <br> ya da geliştirdiğim projelerim hakkında bilgi almak için "Projelerim" sayfasını ziyaret edebilirsiniz.</h2> <br><br><br>
+                    <a href="about-page.html" target="_self">Hakkımda</a>
+                    <a href="projects-page.html" target="_self">Projelerim</a> 
+                    <br><br><br><br>
+                    <div class="time_date">
+                        <div class="time">
+                            <span id="hour"></span>
+                            <span id="dots">:</span>
+                            <span id="minute"></span>
+                        </div>
+                        <div class="date">
+                            <span id="day"> </span>
+                            <span id="month"> </span>
+                            <span id="year"></span>
+                        </div>
+                    </div>
                   </div>
-            </div>
-        </section>
-
-        <section id="aboutpage">
-            <div class="aboutpage-container">
-                <div class="aboutpage-texts-container">
-                    <h1>Emirhan AŞIK Kimdir?</h1>
-                    <p id="text">
-                        Teknolojiye ve inovasyona olan tutkum beni yazılım geliştirme dünyasına adım atmaya yönlendirdi. 
-                        Bilgisayar mühendisliği eğitimim boyunca edindiğim teorik bilgileri pratiğe dökerek, işlevsel ve kullanıcı 
-                        dostu projeler geliştirmeyi hedefliyorum. Sürekli öğrenmeye açık bir yapıya sahibim ve her yeni proje 
-                        benim için bir gelişim fırsatı.
-                    </p>
-                    <button id="toggleButton">Daha fazla gör...</button> <br><br><br>
-                    <a href="about-page.html" target="_self">Daha Fazla Bilgi İçin</a>
-                </div>
-            </div>
-        </section> 
-
-        <section id="projects">
-            <div class="hp-projects-containers">
-                <div class="projects-title-container">
-                    <h1>Projelerim</h1><br>
-                </div>
-                <div class="projects-texts-container">
-                    <img src="assets/img/avus.png" alt="AVUS"> 
-                    <img src="assets/img/bilgisayar.png" alt="bilgisayar"><br><br><br>
-                    <p>
-                        Geliştirdiğim projeler, kullanıcı deneyimini ön planda tutarak farklı sektörlerde dijital çözümler sunmayı amaçlamaktadır. Bilgisayar seçimini kolaylaştırmak için geliştirdiğimiz sistem, kullanıcıların ihtiyaçlarına göre en uygun bilgisayarı bulmalarına yardımcı olurken, oyun konsolları için teknik destek sağlayan web sitesi, kullanıcıların PlayStation cihazlarındaki sorunlara hızlıca çözüm bulmalarını sağlar. Ayrıca, turizm bölgesinde yer alan bir restoran için hazırladığım web sitesi, kullanıcıların menüyü dil seçenekleriyle incelemelerini kolaylaştırarak yerli ve yabancı ziyaretçilere hitap etmektedir. Bu projeler, kullanıcı dostu arayüzleri ve sektörel ihtiyaçlara uygun çözümleriyle, teknolojiyi her alanda erişilebilir ve verimli hale getirmeyi hedeflemektedir.
-                    </p> <br><br><br>
-                    <a href="projects-page.html" target="_self">Projelerimi Detaylı İncelemek İçin Lütfen Tıklayınız</a> <br><br><br><br><br><br>
-                </div>
             </div>
         </section>
         
         <section id="contacts">
             <div class="contacts-container">
                 <div class="contacts-title-container">
-                    <br><br><br><h1>İletişim</h1> <br><br>
+                    <br><h1>İletişim</h1> <br><br>
                     <h2>Aşağıdaki bölümden mesaj gönderebilirsiniz</h2><br><br>
                 </div>
                 <div class="message-form">
-                    <form action="#" class="form">
+                    <div id="error"></div>
+                    <form id="form" action="/" method="get" class="form">
                         <div class="column">
                             <div class="input-box">
-                                <label>Adınız</label><br>
-                                <input type="text" placeholder="Lütfen adınızı giriniz."/>
+                                <label for="name">Adınız</label><br>
+                                <input id="name" type="text" placeholder="Lütfen adınızı giriniz."/>
                             </div>
                             <div class="input-box">
-                                <label>Soyadınız</label><br>
-                                <input type="text" placeholder="Lütfen soyadınızı giriniz."/>
+                                <label for="surname">Soyadınız</label><br>
+                                <input id="surname" type="text" placeholder="Lütfen soyadınızı giriniz."/>
                             </div>
                         </div>
                         <div class="input-box">
-                            <label>Mail Adresiniz</label><br>
-                            <input type="text" placeholder="Lütfen mail adresinizi giriniz."/>
+                            <label for="email">Mail Adresiniz</label><br>
+                            <input id="email" type="text" placeholder="Lütfen mail adresinizi giriniz."/>
                         </div>
                         <div class="input-box">
                             <label>Mesleğiniz</label><br>
@@ -99,10 +86,11 @@
                             </div>
                         </div>
                         <div class="input-box">
-                            <label>Mesajınız</label><br>
-                            <textarea placeholder="Lütfen mesajınızı yazınız."></textarea>
+                            <label for="textArea">Mesajınız</label><br>
+                            <textarea id="textArea" placeholder="Lütfen mesajınızı yazınız."></textarea>
                         </div>
-                        <button id="submit">Gönder</button><button type="reset">Temizle</button>
+                        <button type="submit">Gönder</button>
+                        <button type="reset">Temizle</button>
                     </form>
                 </div><br><br><br><br><br><br><br><br>
             </div>
